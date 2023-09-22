@@ -18,7 +18,7 @@ export class CustomLabelDirective  implements OnInit{
 
   @Input() set erros (value : ValidationErrors | null | undefined){
     this._erros = value;
-    console.log(value);
+    
     this.setErrorMessage();
   };
   
