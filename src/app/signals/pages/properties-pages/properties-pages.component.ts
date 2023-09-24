@@ -6,4 +6,7 @@ import { Component } from '@angular/core';
 })
 export class PropertiesPagesComponent {
 
+  onFielUpdated(fiels: string, value: string){
+
+  }
 }
