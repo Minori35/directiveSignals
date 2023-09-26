@@ -1,11 +1,14 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, OnDestroy, computed, effect, signal } from '@angular/core';
 import { User } from '../../interfaces/user-request.interface';
 
 @Component({
   templateUrl: './properties-pages.component.html',
   styleUrls: ['./properties-pages.component.css']
 })
-export class PropertiesPagesComponent {
+export class PropertiesPagesComponent implements OnDestroy{
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
+  }
 
   public user = signal<User>({
     id: 2,
@@ -16,6 +19,12 @@ export class PropertiesPagesComponent {
   });
 
   public fullname = computed( () => `${this.user().first_name}${this.user().last_name}`)
+
+  public userChangesEffect = effect( () => {
+    console.log();
+    
+
+  });
 
   onFielUpdated(field: keyof User, value: string){
     // this.user.set({
