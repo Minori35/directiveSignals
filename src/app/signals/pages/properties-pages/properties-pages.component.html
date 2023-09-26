@@ -7,20 +7,26 @@
         #txtEmail
         type="text"
         class="form-control mb-2"
+        [value]="user().email"
         (input)="onFielUpdated('email', txtEmail.value)">
         <input 
         #txtfirstName
+        [value]="user().first_name"
         type="text"
         class="form-control mb-2"
         (input)="onFielUpdated('first_name', txtfirstName.value)">
         <input 
         #txtLastName
+        [value]="user().last_name"
         type="text"
         class="form-control mb-2"
         (input)="onFielUpdated('last_name', txtLastName.value)">
     </div>
     <div class="col-6">
 <!-- data de usuario -->
-        {{'dsad'}}
+        {{user() | json}}
+
+
+        {{fullname()}}
     </div>
 </div>
